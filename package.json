@@ -1,0 +1,21 @@
+{
+  "name": "npm-hello-world-package",
+  "version": "0.0.1",
+  "description": "Basic hello world app",
+  "main": "build/index.js",
+  "scripts": {
+    "prepack": "[ ! -f .buildme ] || npm run build",
+    "preinstall": "[ ! -f .buildme ] || npm run build",
+    "build": "rm -rf ./build && mkdir ./build && cp index.js ./build/index.js && echo 'build success'",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "author": "grigory.bogush.dev@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "user": "^0.0.0"
+  }
+}
